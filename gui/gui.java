@@ -9,26 +9,35 @@ import javax.swing.*;
 // Main Method
 public class gui {
   public static void main(String[] args) {
+    // Variables
     JFrame frame = new JFrame("MainEditor");
-    frame.setSize(420, 420); // Sets the size of pixels in width, height
+    JLabel label = new JLabel("ButtonNotActivated");
+    JButton button = new JButton("Save Files");
+
+    // Frame Config
+    frame.setSize(1080, 680); // Sets the size of pixels in width, height
     frame.setDefaultCloseOperation(
         JFrame.EXIT_ON_CLOSE); // Closes the program whenever you close the
                                // window.
     frame.setLayout(null);
-    frame.setResizable(false);
-    JLabel label = new JLabel("ButtonNotActivated");
-    label.setBounds(15, 15, 300, 300);
-    JButton button = new JButton("Save");
+    frame.setResizable(true);
+
+    // Label Config
+    label.setFont("Verdana", Font.BOLD, 15);
+    label.setBounds(15, -50, 300, 300);
+
+    // Button Config
     button.setBounds(150, 150, 150, 30);
-    frame.add(button);
-    button.addActionListener(new ActionListener() {
+    button.addActionListener(new Actionlistener() {
       public void actionPerformed(ActionEvent e) {
-        label.setText("Saving your files");
+        label.setText("Saving Files");
       }
     });
-
+    // Adding to the frame
+    frame.add(button);
     frame.add(label);
-    label.setFont(new Font("Verdana", Font.BOLD, 15)); // Font
+
+    // Activating the frame
     frame.setVisible(true);
   }
 }
