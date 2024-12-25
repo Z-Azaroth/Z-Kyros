@@ -23,12 +23,11 @@ public class gui {
     frame.setResizable(true);
 
     // Label Config
-    label.setFont("Verdana", Font.BOLD, 15);
     label.setBounds(15, -50, 300, 300);
 
     // Button Config
     button.setBounds(150, 150, 150, 30);
-    button.addActionListener(new Actionlistener() {
+    button.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         label.setText("Saving Files");
       }
